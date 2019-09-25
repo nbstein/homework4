@@ -1,0 +1,257 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+  background-color: #ddd;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-size: 50px;
+  line-height: 1;
+  padding: 50px 0;
+  text-align: center;
+}
+
+h2{
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+nav ul{
+  list-style-type: none;
+}
+
+nav li{
+  padding-right: 20px;
+  display: inline;
+}
+
+nav li:hover {
+  text-decoration: underline;
+}
+
+
+nav a{
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover{
+  text-decoration: underline;
+}
+
+.skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  position: absolute;
+  top: -40px;
+  -webkit-transition: top;
+  transition-property: top;
+  z-index: 1;
+}
+
+.skip a:focus{
+  top: 0px;
+}
+
+:focus{
+  border: 2px solid black;
+}
+
+footer{
+  background-color: black;
+  color: white;
+  grid-column: 1 / -1;  /*Makes columns go from start to end*/
+  grid-row: 7 / auto;   /*Rows go from row 7 to bottom of page*/
+  padding-top: 30px;
+  text-align: center;
+}
+
+.container{
+  display: grid;
+  grid-template-rows: 30px auto auto auto auto auto 100px;
+  grid-template-columns: 100px 500px 100px;
+  grid-row-gap: 15px;
+  width: 100vw;
+}
+
+.nav{
+  background-color: #ddd;
+  padding: 20px 0;
+  text-align: left;
+  justify-content: center;
+  grid-column: 1/-1;
+  grid-row: 1/2;
+}
+
+header{
+  background-attachment: fixed; /* Parallax effect */
+  background-image: url(../images/header.jpg);
+  background-position: center;  /* Parallax effect */
+  background-repeat: no-repeat; /* Parallax effect */
+  background-size: cover;       /* Parallax effect */
+  color: white;
+  height: 400px;                /* Parallax effect */
+  grid-column: 1/-1;
+  grid-row-start: 2;
+  grid-row: span 1;
+}
+header p{
+  color: white;
+  font-size: 24px;
+  padding: 0 100px;
+  text-align: center;
+}
+
+.about-image{
+  grid-column: 1/-1;
+  grid-row: 3/4;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.about{
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+.method-image{
+  grid-column: 1/-1;
+  grid-row: 4/5;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.method{
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+.clients-image{
+  grid-column:1/-1;
+  grid-row: 5/6;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.clients{
+  grid-column: 2/3;
+  grid-row: 5/6;
+}
+
+.contact-image{
+  grid-column:1/-1;
+  grid-row: 6/7;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.contact{
+  grid-column: 2/3;
+  grid-row: 6/7;
+}
+
+.text-block{
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, .8);
+  border: 10px solid black;
+  padding: 30px;
+}
+
+@media only screen and (min-width: 800px) {
+
+  .container{
+    display: grid;
+    grid-template-rows: 70px 400px 400px 400px 400px 400px 100px;
+    grid-template-columns: 50px auto 500px auto 50px;
+  }
+
+  .nav{
+    background-color: #ddd;
+    text-align: right;
+    justify-content: center;
+    padding: 35px 0;
+    grid-column: 1/-1;
+    grid-row-start: 1;
+    grid-row: span 1;
+  }
+
+  .about-image{
+    grid-column: 2/4;
+    grid-row: 3/4;
+    max-height: 700px;
+    overflow: hidden;
+    }
+
+  .about{
+    grid-column: 3/5;
+    grid-row: 3/4;
+  }
+
+  .method-image{
+    grid-column: 3/5;
+    grid-row: 4/5;
+    max-height: 700px;
+    overflow: hidden;
+  }
+
+  .method{
+    grid-column: 2/4;
+    grid-row: 4/5;
+  }
+
+  .clients-image{
+
+    grid-column: 2/4;
+    grid-row: 5/6;
+    max-height: 700px;
+    overflow: hidden;
+  }
+
+  .clients{
+    grid-column: 3/5;
+    grid-row: 5/6;
+  }
+
+  .contact-image{
+    grid-column: 3/5;
+    grid-row: 6/7;
+    max-height: 700px;
+    overflow: hidden;
+  }
+
+  .contact{
+    grid-column: 2/4;
+    grid-row: 6/7;
+   }
+
+}  /*End the media query*/
+
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto; /* Removes scroll animation */
+  }
+
+  .skip a{
+    background: white;
+    left: 0;
+    padding: 6px;
+    position: absolute;
+    top: -40px;
+    -webkit-transition: top; /* Your code here - set to default setting */
+    transition: top; /* Your code here - set to default setting */
+    z-index: 1;
+  }
+
+  .skip a:focus{
+    top:0;
+  }
+}
